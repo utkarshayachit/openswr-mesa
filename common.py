@@ -109,5 +109,6 @@ def AddOptions(opts):
     opts.Add(BoolOption('texture_float',
                         'enable floating-point textures and renderbuffers',
                         'no'))
+    opts.Add(BoolOption('avx',  'Use AVX (instead of AVX2)', 'no'))
     if host_platform == 'windows':
         opts.Add('MSVC_VERSION', 'Microsoft Visual C/C++ version')
