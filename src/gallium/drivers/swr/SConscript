@@ -14,12 +14,25 @@ env.MSVC2008Compat()
 env.Append(CPPDEFINES = [
 	'__STDC_CONSTANT_MACROS',
 	'__STDC_LIMIT_MACROS',
-    'KNOB_ARCH=KNOB_ARCH_AVX2',
 	])
+
+if env["avx"]:
+  env.Append(CPPDEFINES = [
+    'KNOB_ARCH=KNOB_ARCH_AVX',
+  ])
+  env.Append(CCFLAGS = [
+    '-march=core-avx-i',
+    ])
+else:
+  env.Append(CPPDEFINES = [
+    'KNOB_ARCH=KNOB_ARCH_AVX2',
+  ])
+  env.Append(CCFLAGS = [
+    '-march=core-avx2',
+    ])
 
 env.Append(CCFLAGS = [
     '-std=c++11',
-    '-march=core-avx2',
     ])
 
 env.Prepend(CPPPATH = [
