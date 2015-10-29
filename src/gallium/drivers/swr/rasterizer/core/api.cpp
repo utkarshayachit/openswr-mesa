@@ -30,10 +30,6 @@
 #include <cmath>
 #include <cstdio>
 
-#if defined(__gnu_linux__) || defined(__linux__)
-#include <numa.h>
-#endif
-
 #include "core/api.h"
 #include "core/backend.h"
 #include "core/context.h"

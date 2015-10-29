@@ -32,7 +32,6 @@
 #include <string>
 
 #if defined(__linux__) || defined(__gnu_linux__)
-#include <numa.h>
 #include <pthread.h>
 #include <sched.h>
 #include <unistd.h>
